@@ -3,7 +3,7 @@
 # Contact me:
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://www.facebook.com/duongnguyen291/) 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nguyen-dinh-duong-074242248/) 
-[![Portfolio](https://img.shields.io/badge/Portfolio-121212?logo=firefox&logoColor=white)](https://your-portfolio-link.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-121212?logo=firefox&logoColor=white)](https://duongnguyen.info)
 
 # 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api?username=duongnguyen291&theme=dark&hide_border=false&include_all_commits=false&count_private=true)<br/>
