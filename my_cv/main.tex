@@ -1,0 +1,316 @@
+%-------------------------% Resume in Latex
+% Author : Vaishanth
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+\usepackage[utf8]{vietnam}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage{enumitem}
+
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}%\setmainfont{Times New Roman}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+
+\definecolor{cvblue}{HTML}{0E5484}
+\definecolor{black}{HTML}{130810}
+\definecolor{darkcolor}{HTML}{0F4539}
+\definecolor{cvgreen}{HTML}{3BD80D}
+\definecolor{taggreen}{HTML}{00E278}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{darkcolor}
+\colorlet{heading}{darkcolor}
+\colorlet{headingrule}{cvblue}
+\colorlet{accent}{darkcolor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+%----------FONT OPTIONS----------
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% \usepackage[T1]{fontenc}
+% \usepackage[T1]{fontenc}
+% \usepackage{cochineal}
+% \usepackage{fourier}
+
+% \usepackage{fontspec}
+% \usepackage{polyglossia}
+% \setmainlanguage{german}
+% \setmainfont{Times New Roman}
+
+% serif
+\usepackage{CormorantGaramond}
+\usepackage{charter}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+\urlstyle{same}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & \textbf{\small #2} \\
+      \textit{\large#3} & \textit{\small #4} \\
+      
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSingleSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & \textbf{\small #2} \\
+      
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.1in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+%----------HEADING----------
+\begin{center}
+    {\huge Nguyễn Đình Dương} \\ \vspace{3pt}
+    {\large\textcolor{airforceblue}{Data Engineer $|$ AI Engineer $|$ Full-Stack Developer}} \\ \vspace{4pt}
+    \small
+    \faPhone\ +(84) 336 626 401 ~
+    $|$ ~
+    \href{mailto:2901nguyendinhduong@gmail.com}{\faEnvelope\ \color{blue}{2901nguyendinhduong@gmail.com}} ~
+    $|$ ~
+    \href{https://www.linkedin.com/in/nguyen-dinh-duong-074242248/}{\faLinkedin\ \color{blue}{Linkedin}} ~
+    $|$ ~
+    \href{https://github.com/duongnguyen291}{\faGithub\ \color{blue}{Github}} ~
+    $|$ ~
+    \href{https://duongnguyen.info/}{\faGlobe\ \color{blue}{Portfolio}}
+    \vspace{-7pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{\color{airforceblue}EDUCATION}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Hanoi University of Science and Technology – HUST}{Ha Noi, Viet Nam}
+      {\href{https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-thong-tin-global-ict}{Major: Global ICT} -- CPA: 3.78/4.0}{09/2022 -- Present}
+  \resumeSubHeadingListEnd
+  \vspace{-10pt}
+
+%-----------SKILLS-----------
+\section{\color{airforceblue} SKILLS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \small{\item{
+     \textbf{\normalsize{Programming Languages:}} \normalsize{Python, JavaScript/TypeScript, C/C++, Java} \\
+       \vspace{1.2pt}
+    \textbf{\normalsize{Frameworks \& Libraries:}} \normalsize{FastAPI, Next.js, React} \\
+      \vspace{1.2pt}
+     \textbf{\normalsize{Database \& Storage:}} \normalsize{MySQL, PostgreSQL,MongoDB, Redis, Milvus, Qdrant, Elasticsearch, Solr, Object Storage (MinIO)} \\
+      \vspace{1.2pt}
+    \textbf{\normalsize{AI \& Data Engineering:}} \normalsize{RAG architecture, AI Agent, LLMs, OCR, Data Pipelines, Hadoop, Spark, Dagster} \\
+      \vspace{1.2pt}
+     \textbf{\normalsize{Tools \& Core Knowledge:}} \normalsize{Docker, Git, Microservices, RESTful APIs, Scrum,  Data Structures, OOP, Windows, Linux}
+     }}
+ \end{itemize}
+ \vspace{-16pt}
+ 
+%-----------EXPERIENCE-----------
+\section{\color{airforceblue}WORK EXPERIENCE}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Data Engineer}{}
+      {AI Department, Digital Transformation \& Platform Center, Viettel Network}{07/2025 -- Present}
+      \vspace{-5pt}
+      \resumeItemListStart
+            \resumeItem{\normalsize{Architected and maintained data pipelines processing \textbf{5,000+ organizational documents} (PDF, DOCX, Excel, TXT) into structured data for AI applications using FastAPI, Dagster, Redis, and MinIO.}}
+            \resumeItem{\normalsize{Built core AI applications including \textbf{RAG systems, AI Agents, and automated document extraction} using Qwen, DeepSeek OCR, Docling, and vector databases.}}
+            \resumeItem{\normalsize{Developed internal enterprise tools from the core processing engine: \textbf{data masking service} for sensitive document redaction and \textbf{automated document validation pipeline} for regulatory compliance.}}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Data Analyst / Data Engineer Intern}{}
+      {FPT, Ha Noi, Viet Nam}{12/2023 -- 03/2024}
+      \vspace{-5pt}
+      \resumeItemListStart
+            \resumeItem{\normalsize{Built data pipelines to extract and process text from PDFs/Word docs into Markdown, enriching AI comprehension for RAG (Retrieval-Augmented Generation) systems.}}
+            \resumeItem{\normalsize{Analyzed academic data to uncover insights and structure data for training AI bots.}}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-18pt}
+
+%-----------PROJECTS-----------
+\section{\color{airforceblue}PROJECTS}
+    \resumeItemListStart
+
+    \resumeItem{\normalsize{\textbf{DocAI Platform} $|$ \textit{FastAPI, Next.js, PostgreSQL, LLM, VLM, Dagster, Docker} \hfill \textbf{Solo Project}}}
+    \resumeItemListStart
+        \resumeItem{\normalsize{Built a \textbf{no-code Document AI platform} automating document processing, data extraction, and business rule validation for enterprise use.}}
+        \resumeItem{\normalsize{Developed a \textbf{Visual Template Builder} for custom template creation, an AI pipeline integrating OCR and LLMs for structural data parsing, and a \textbf{Rule Engine} for automated regulatory validation.}}
+        \resumeItem{\normalsize{Implemented user/department management, role-based access, and workspace isolation for multi-team collaboration.}}
+    \resumeItemListEnd
+    \vspace{-5pt}
+
+    \resumeItem{\normalsize{\textbf{DocProcess Foundation} $|$ \textit{Python, FastAPI, Dagster, Redis, MinIO, DeepSeek OCR, Docling}}}
+    \resumeItemListStart
+        \resumeItem{\normalsize{Designed an \textbf{event-driven, modular document processing engine} with pluggable converters (PDF, DOCX, Excel, TXT) and manifest-based dynamic job routing.}}
+        \resumeItem{\normalsize{Decoupled API and orchestration via Redis queues; used MinIO for S3-compatible object storage with presigned URLs and multi-step pipeline architecture.}}
+        \resumeItem{\normalsize{\textbf{Reduced data processing time by up to 90\%}; serves as the core engine powering multiple internal applications (masking, extraction, RAG).}}
+    \resumeItemListEnd
+    \vspace{-5pt}
+
+    \resumeItem{\normalsize{\textbf{Masking Extension} $|$ \textit{Python, FastAPI, Dagster, Qdrant, Surya OCR, EasyOCR, ICAP, Docker}}}
+    \resumeItemListStart
+        \resumeItem{\normalsize{Developed a \textbf{document masking and security platform} supporting keyword-based and semantic redaction for DOCX, DOC, PDF, Excel, and TXT files.}}
+        \resumeItem{\normalsize{Integrated ICAP protocol for network-level interception, enabling real-time document scanning and masking at the proxy layer.}}
+    \resumeItemListEnd
+    \vspace{-5pt}
+
+    \resumeItem{\normalsize{\textbf{Benchmark Vector Database \& RAG Application} $|$ \textit{FastAPI, Next.js, Milvus, Qdrant, Elasticsearch, PgVector ,MinIO}}}
+    \resumeItemListStart
+        \resumeItem{\normalsize{Built a document QA system with DOCX upload, text/image extraction, and interactive chat interface.}}
+        \resumeItem{\normalsize{Benchmarked insertion and query performance across \textbf{Milvus, Qdrant, Elasticsearch, and PgVector} to select the optimal backbone for organizational applications.}}
+    \resumeItemListEnd
+    \vspace{-5pt}
+
+    \resumeItem{\normalsize{\textbf{Social Media Comment Classification} $|$ \textit{Python, Selenium, Scikit-learn} \hfill \href{https://github.com/duongnguyen291/data-science-crawler}{\color{blue}{GitHub}}}}
+    \resumeItemListStart
+        \resumeItem{\normalsize{Built end-to-end data pipeline: web crawlers (YouTube, Threads), data labeling algorithms, preprocessing, and feature engineering for ML classification models.}}
+    \resumeItemListEnd
+    \vspace{-5pt}
+
+    \resumeItem{\normalsize{\textbf{Sign Language Recognition} $|$ \textit{Python, CNN, OpenCV} \hfill \href{https://github.com/duongnguyen291/Sign-Language-Recognition}{\color{blue}{GitHub}}}}
+    \resumeItemListStart
+        \resumeItem{\normalsize{Achieved \textbf{97\% accuracy} in real-time sign language recognition via live video using CNN and Random Forest approaches.}}
+    \resumeItemListEnd
+
+    \resumeItemListEnd
+ \vspace{-12pt}
+
+\section{\color{airforceblue}COMPETITION AND AWARD } 
+  \resumeItemListStart
+    \resumeItem{\normalsize{HUST Academic Excellence Scholarship 2024.1, 2024.2, 2025.1}}
+\vspace{-5pt}\resumeItem{\normalsize{\href{https://www.facebook.com/scic.soict/posts/pfbid09VfR4sDziSnJ3wqtQe1uvoHCFsSLdQM1RUDf2AuVCrv8WnNbwwWzRGiUAzMvBMxTl}{Top 1 Student Creative Ideas Challenge - SOICT}}}
+    \vspace{-5pt}
+\resumeItem{\normalsize{\href{https://www.facebook.com/share/p/1BTMMT1HA8/}{SOICT Hackathon Finals}}}
+    \vspace{-5pt}
+    \resumeItem{\normalsize{Top 6 DENSO Factory Hacks 2023}}
+    \vspace{-5pt}
+  \resumeItemListEnd 
+      
+\vspace{-8pt}
+\section{\color{airforceblue}CERTIFICATIONS}
+  \resumeItemListStart
+    \resumeItem{\normalsize{Certificate of Graduation - Phase 2 of Viettel Digital Talent Program 2025}}
+    \vspace{-5pt}
+    \resumeItem{\normalsize{Certificate of Completion - Phase 1 of Viettel Digital Talent Program 2025: Data Engineering}}
+    \vspace{-5pt}
+    \resumeItem{\normalsize{VSTEP 7.0 by Hanoi University of Science and Technology (HUST) }}
+    \vspace{-5pt}
+    \resumeItem{\normalsize{IELTS 6.0 by British Council}}
+    \vspace{-5pt}
+    \resumeItem{\normalsize{\href{https://www.coursera.org/account/accomplishments/specialization/certificate/LSGFHA3RQG4D}{Google Data Analytics Specialization}} }
+    \vspace{-5pt}
+    \resumeItem{\normalsize{Microsoft Office Specialist Excel 2016, Word 2013, Powerpoint 2013}} 
+    \vspace{-5pt}
+
+  \resumeItemListEnd 
+      
+\vspace{-8pt}
+%-----------EXTRACURRICULAR---------------
+\section{\color{airforceblue}EXTRACURRICULAR ACTIVITIES}
+  \resumeItemListStart
+    \resumeItem{\normalsize{\textbf {Vice President},  \href{https://www.facebook.com/soditec.soict.hust}{\color{blue}{SoDiTEC Club}} - {12/2022 - Now}} \\
+      Led two online courses (“Conquering LaTeX” and “Introduction to IT & C Programming”), attracting over 5,000 learners globally.\\
+      Oversaw club operations, developed content strategy, and coordinated workshops and events.
+    }
+    \vspace{-5pt}
+    \resumeItem{\normalsize{\textbf{Teaching Assistant, Short Courses @SOICT} 
+    \newline
+   Supported instruction for \textit{“Prompt Engineering,” “Programming with Scratch,” and “Kidemy’s AI Summer Camp,”} clarifying core concepts and grading assignments. \\
+     Improved student engagement and retention for hundreds of learners through hands-on guidance.
+   }}
+    \vspace{-5pt}
+    \resumeItem{\normalsize{\textbf{Head of Academic Research & Career Guidance,} \href{https://www.facebook.com/soict.hust}{\color{blue}{Youth Union }}- SOICT - {12/2022 - Now}} \\
+    Organized academic contests, knowledge-sharing sessions, and career orientation programs, drawing strong student participation.
+
+\\ Promoted a research culture, supported academic development, and enhanced professional readiness among undergraduates.
+
+    }
+
+
+\end{document}
