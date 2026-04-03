@@ -71,8 +71,7 @@
 ---
 ## 📊 GitHub Stats
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=duongnguyen291&theme=dark&hide_border=false&include_all_commits=false&count_private=true" alt="GitHub Stats" />
-  <br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=duongnguyen291&theme=dark&hide_border=false&include_all_commits=true&langs_count=5&count_private=true&layout=compact" alt="Top Langs" />
-</div>
+![](https://github-readme-stats.vercel.app/api?username=duongnguyen291&theme=dark&hide_border=false&include_all_commits=false&count_private=true)<br/>
+![](https://github-readme-streak-stats.herokuapp.com/?user=duongnguyen291&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=duongnguyen291&theme=dark&hide_border=false&include_all_commits=true&langs_count=5&count_private=true&layout=compact)
+
