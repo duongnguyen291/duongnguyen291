@@ -1,39 +1,49 @@
-%-------------------------% Resume in Latex
-% Author : Vaishanth
-% License : MIT
-%------------------------
+%-------------------------
+% Resume in LaTeX
+% Nguyễn Đình Dương
+% AI Engineer / AI Platform Engineer
+%-------------------------
 
 \documentclass[letterpaper,11pt]{article}
+
 \usepackage[utf8]{vietnam}
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
 \usepackage{enumitem}
-
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
-\usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{needspace}
 \usepackage{fontawesome5}
 \usepackage{multicol}
-\usepackage{graphicx}%\setmainfont{Times New Roman}
-\setlength{\multicolsep}{-3.0pt}
-\setlength{\columnsep}{-1pt}
+\usepackage{graphicx}
+\usepackage{CormorantGaramond}
+\usepackage{charter}
+
 \input{glyphtounicode}
 
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
 
+%-------------------------
+% COLORS
+%-------------------------
+
 \definecolor{cvblue}{HTML}{0E5484}
 \definecolor{black}{HTML}{130810}
 \definecolor{darkcolor}{HTML}{0F4539}
-\definecolor{cvgreen}{HTML}{3BD80D}
-\definecolor{taggreen}{HTML}{00E278}
 \definecolor{SlateGrey}{HTML}{2E2E2E}
 \definecolor{LightGrey}{HTML}{666666}
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\definecolor{cardband}{HTML}{E8F0F5}
+\definecolor{cardrule}{HTML}{A9C1D2}
+
 \colorlet{name}{black}
 \colorlet{tagline}{darkcolor}
 \colorlet{heading}{darkcolor}
@@ -42,275 +52,583 @@
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
 
-%----------FONT OPTIONS----------
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
+%-------------------------
+% PAGE LAYOUT
+%-------------------------
 
-% \usepackage[T1]{fontenc}
-% \usepackage[T1]{fontenc}
-% \usepackage{cochineal}
-% \usepackage{fourier}
-
-% \usepackage{fontspec}
-% \usepackage{polyglossia}
-% \setmainlanguage{german}
-% \setmainfont{Times New Roman}
-
-% serif
-\usepackage{CormorantGaramond}
-\usepackage{charter}
-
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.6in}
-\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\oddsidemargin}{-0.60in}
+\addtolength{\evensidemargin}{-0.50in}
 \addtolength{\textwidth}{1.19in}
-\addtolength{\topmargin}{-.7in}
-\addtolength{\textheight}{1.4in}
-\urlstyle{same}
+\addtolength{\topmargin}{-0.69in}
+\addtolength{\textheight}{1.35in}
 
-\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\urlstyle{same}
 
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+\setlength{\multicolsep}{-3pt}
+\setlength{\columnsep}{-1pt}
 
-% Ensure that generate pdf is machine readable/ATS parsable
+%-------------------------
+% SECTION STYLE
+%-------------------------
+
+\titleformat{\section}{
+  \vspace{-2pt}
+  \scshape
+  \raggedright
+  \large
+  \bfseries
+}{}{0em}{}[
+  \color{black}
+  \titlerule
+  \vspace{-5pt}
+]
+
+% ATS / machine readable
 \pdfgentounicode=1
 
 %-------------------------
-% Custom commands
+% CUSTOM COMMANDS
+%-------------------------
+
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-1pt}}
   }
 }
 
-\newcommand{\classesList}[4]{
-    \item\small{
-        {#1 #2 #3 #4 \vspace{-2pt}}
-  }
-}
-
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{\large#1} & \textbf{\small #2} \\
-      \textit{\large#3} & \textit{\small #4} \\
-      
-    \end{tabular*}\vspace{-7pt}
+  \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{\large #1} & \textbf{\small #2} \\
+    \textit{\large #3} & \textit{\small #4} \\
+  \end{tabular*}
+  \vspace{-6pt}
 }
-
-
-\newcommand{\resumeSingleSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{\large#1} & \textbf{\small #2} \\
-      
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & \textbf{\small #2}\\
-    \end{tabular*}\vspace{-7pt}
+  \item
+  \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & \textbf{\small #2}\\
+  \end{tabular*}
+  \vspace{-6pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[leftmargin=0.0in, label={}]
+}
 
-\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}
+}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.1in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}[leftmargin=0.16in, itemsep=1.3pt, topsep=2pt]
+}
 
-\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+\newcommand{\resumeItemListEnd}{
+  \end{itemize}
+  \vspace{-4pt}
+}
 
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\labelitemi{
+  $\vcenter{\hbox{\tiny$\bullet$}}$
+}
+
+\renewcommand\labelitemii{
+  $\vcenter{\hbox{\tiny$\bullet$}}$
+}
+
+%==========================================================
+% RESUME
+%==========================================================
 
 \begin{document}
-%----------HEADING----------
+%==========================================================
+% HEADER
+%==========================================================
+
 \begin{center}
-    {\huge Nguyễn Đình Dương} \\ \vspace{3pt}
-    {\large\textcolor{airforceblue}{Data Engineer $|$ AI Engineer $|$ Full-Stack Developer}} \\ \vspace{4pt}
-    \small
-    \faPhone\ +(84) 336 626 401 ~
-    $|$ ~
-    \href{mailto:2901nguyendinhduong@gmail.com}{\faEnvelope\ \color{blue}{2901nguyendinhduong@gmail.com}} ~
-    $|$ ~
-    \href{https://www.linkedin.com/in/nguyen-dinh-duong-074242248/}{\faLinkedin\ \color{blue}{Linkedin}} ~
-    $|$ ~
-    \href{https://github.com/duongnguyen291}{\faGithub\ \color{blue}{Github}} ~
-    $|$ ~
-    \href{https://duongnguyen.info/}{\faGlobe\ \color{blue}{Portfolio}}
-    \vspace{-7pt}
+
+    {\huge \textbf{Nguyễn Đình Dương}} \\[3pt]
+
+    {\large
+    \textcolor{airforceblue}{
+        AI Engineer $|$ Agentic AI \& LLM Systems $|$ AI Platform Engineering
+    }} \\[5pt]
+
+    % Contact line 1
+    {\small
+    \mbox{
+        \faPhone\ +(84) 336 626 401
+        \quad \textbar \quad
+        \href{mailto:2901nguyendinhduong@gmail.com}{
+            \faEnvelope\ \color{blue}{2901nguyendinhduong@gmail.com}
+        }
+    }
+    } \\[3pt]
+
+    % Contact line 2
+    {\small
+    \mbox{
+        \href{https://www.linkedin.com/in/nguyen-dinh-duong-074242248/}{
+            \faLinkedin\ \color{blue}{LinkedIn}
+        }
+        \quad \textbar \quad
+        \href{https://github.com/duongnguyen291}{
+            \faGithub\ \color{blue}{GitHub}
+        }
+        \quad \textbar \quad
+        \href{https://duongnguyen.info/}{
+            \faGlobe\ \color{blue}{Portfolio}
+        }
+    }
+    }
+
 \end{center}
 
-%-----------EDUCATION-----------
-\section{\color{airforceblue}EDUCATION}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Hanoi University of Science and Technology – HUST}{Ha Noi, Viet Nam}
-      {\href{https://ts.hust.edu.vn/training-cate/nganh-dao-tao-dai-hoc/cong-nghe-thong-tin-global-ict}{Major: Global ICT} -- CPA: 3.78/4.0}{09/2022 -- Present}
-  \resumeSubHeadingListEnd
-  \vspace{-10pt}
+\vspace{-8pt}
 
-%-----------SKILLS-----------
-\section{\color{airforceblue} SKILLS}
- \begin{itemize}[leftmargin=0in, label={}]
-    \small{\item{
-     \textbf{\normalsize{Programming Languages:}} \normalsize{Python, JavaScript/TypeScript, C/C++, Java} \\
-       \vspace{1.2pt}
-    \textbf{\normalsize{Frameworks \& Libraries:}} \normalsize{FastAPI, Next.js, React} \\
-      \vspace{1.2pt}
-     \textbf{\normalsize{Database \& Storage:}} \normalsize{MySQL, PostgreSQL,MongoDB, Redis, Milvus, Qdrant, Elasticsearch, Solr, Object Storage (MinIO)} \\
-      \vspace{1.2pt}
-    \textbf{\normalsize{AI \& Data Engineering:}} \normalsize{RAG architecture, AI Agent, LLMs, OCR, Data Pipelines, Hadoop, Spark, Dagster} \\
-      \vspace{1.2pt}
-     \textbf{\normalsize{Tools \& Core Knowledge:}} \normalsize{Docker, Git, Microservices, RESTful APIs, Scrum,  Data Structures, OOP, Windows, Linux}
-     }}
- \end{itemize}
- \vspace{-16pt}
- 
-%-----------EXPERIENCE-----------
+%==========================================================
+% PROFESSIONAL SUMMARY
+%==========================================================
+
+\section{\color{airforceblue}PROFESSIONAL SUMMARY}
+
+\small{
+AI Engineer specializing in production-grade LLM applications,
+agentic systems, Document AI and enterprise AI platforms.
+Experienced in taking AI products from architecture and implementation
+through evaluation, deployment and production operations.
+Built systems spanning RAG, MCP-based tool integration,
+AI workflow orchestration and scalable backend infrastructure,
+with enterprise AI products serving more than \textbf{1,200 users}.
+}
+
+\vspace{-7pt}
+
+%==========================================================
+% WORK EXPERIENCE
+%==========================================================
+
 \section{\color{airforceblue}WORK EXPERIENCE}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Data Engineer}{}
-      {AI Department, Digital Transformation \& Platform Center, Viettel Network}{07/2025 -- Present}
-      \vspace{-5pt}
-      \resumeItemListStart
-            \resumeItem{\normalsize{Architected and maintained data pipelines processing \textbf{5,000+ organizational documents} (PDF, DOCX, Excel, TXT) into structured data for AI applications using FastAPI, Dagster, Redis, and MinIO.}}
-            \resumeItem{\normalsize{Built core AI applications including \textbf{RAG systems, AI Agents, and automated document extraction} using Qwen, DeepSeek OCR, Docling, and vector databases.}}
-            \resumeItem{\normalsize{Developed internal enterprise tools from the core processing engine: \textbf{data masking service} for sensitive document redaction and \textbf{automated document validation pipeline} for regulatory compliance.}}
-      \resumeItemListEnd
-    \resumeSubheading
-      {Data Analyst / Data Engineer Intern}{}
-      {FPT, Ha Noi, Viet Nam}{12/2023 -- 03/2024}
-      \vspace{-5pt}
-      \resumeItemListStart
-            \resumeItem{\normalsize{Built data pipelines to extract and process text from PDFs/Word docs into Markdown, enriching AI comprehension for RAG (Retrieval-Augmented Generation) systems.}}
-            \resumeItem{\normalsize{Analyzed academic data to uncover insights and structure data for training AI bots.}}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-\vspace{-18pt}
 
-%-----------PROJECTS-----------
-\section{\color{airforceblue}PROJECTS}
-    \resumeItemListStart
+\resumeSubHeadingListStart
 
-    \resumeItem{\normalsize{\textbf{DocAI Platform} $|$ \textit{FastAPI, Next.js, PostgreSQL, LLM, VLM, Dagster, Docker} \hfill \textbf{Solo Project}}}
-    \resumeItemListStart
-        \resumeItem{\normalsize{Built a \textbf{no-code Document AI platform} automating document processing, data extraction, and business rule validation for enterprise use.}}
-        \resumeItem{\normalsize{Developed a \textbf{Visual Template Builder} for custom template creation, an AI pipeline integrating OCR and LLMs for structural data parsing, and a \textbf{Rule Engine} for automated regulatory validation.}}
-        \resumeItem{\normalsize{Implemented user/department management, role-based access, and workspace isolation for multi-team collaboration.}}
-    \resumeItemListEnd
-    \vspace{-5pt}
+%----------------------------------------------------------
+% VIETTEL FULL TIME
+%----------------------------------------------------------
 
-    \resumeItem{\normalsize{\textbf{DocProcess Foundation} $|$ \textit{Python, FastAPI, Dagster, Redis, MinIO, DeepSeek OCR, Docling}}}
-    \resumeItemListStart
-        \resumeItem{\normalsize{Designed an \textbf{event-driven, modular document processing engine} with pluggable converters (PDF, DOCX, Excel, TXT) and manifest-based dynamic job routing.}}
-        \resumeItem{\normalsize{Decoupled API and orchestration via Redis queues; used MinIO for S3-compatible object storage with presigned URLs and multi-step pipeline architecture.}}
-        \resumeItem{\normalsize{\textbf{Reduced data processing time by up to 90\%}; serves as the core engine powering multiple internal applications (masking, extraction, RAG).}}
-    \resumeItemListEnd
-    \vspace{-5pt}
+\resumeSubheading
+{AI Engineer}
+{11/2025 -- Present}
+{AI Department, Digital Transformation \& Platform Center, Viettel Network}
+{Ha Noi, Viet Nam}
 
-    \resumeItem{\normalsize{\textbf{Masking Extension} $|$ \textit{Python, FastAPI, Dagster, Qdrant, Surya OCR, EasyOCR, ICAP, Docker}}}
-    \resumeItemListStart
-        \resumeItem{\normalsize{Developed a \textbf{document masking and security platform} supporting keyword-based and semantic redaction for DOCX, DOC, PDF, Excel, and TXT files.}}
-        \resumeItem{\normalsize{Integrated ICAP protocol for network-level interception, enabling real-time document scanning and masking at the proxy layer.}}
-    \resumeItemListEnd
-    \vspace{-5pt}
+\resumeItemListStart
 
-    \resumeItem{\normalsize{\textbf{Benchmark Vector Database \& RAG Application} $|$ \textit{FastAPI, Next.js, Milvus, Qdrant, Elasticsearch, PgVector ,MinIO}}}
-    \resumeItemListStart
-        \resumeItem{\normalsize{Built a document QA system with DOCX upload, text/image extraction, and interactive chat interface.}}
-        \resumeItem{\normalsize{Benchmarked insertion and query performance across \textbf{Milvus, Qdrant, Elasticsearch, and PgVector} to select the optimal backbone for organizational applications.}}
-    \resumeItemListEnd
-    \vspace{-5pt}
+\resumeItem{
+\textbf{Technical owner and lead developer of DocAI},
+an enterprise AI workflow automation platform for document appraisal.
+Owned system architecture and end-to-end implementation across
+backend, frontend and AI orchestration while working directly with
+business stakeholders and a BA from requirements through rollout.
+}
 
-    \resumeItem{\normalsize{\textbf{Social Media Comment Classification} $|$ \textit{Python, Selenium, Scikit-learn} \hfill \href{https://github.com/duongnguyen291/data-science-crawler}{\color{blue}{GitHub}}}}
-    \resumeItemListStart
-        \resumeItem{\normalsize{Built end-to-end data pipeline: web crawlers (YouTube, Threads), data labeling algorithms, preprocessing, and feature engineering for ML classification models.}}
-    \resumeItemListEnd
-    \vspace{-5pt}
+\resumeItem{
+Designed a configurable document intelligence workflow covering
+\textbf{digitization, extraction, cross-document validation and reporting},
+with a visual template builder, rule engine, maker-checker approval flow,
+RBAC, audit trail, scoped API keys, partner REST APIs and webhook callbacks.
+}
 
-    \resumeItem{\normalsize{\textbf{Sign Language Recognition} $|$ \textit{Python, CNN, OpenCV} \hfill \href{https://github.com/duongnguyen291/Sign-Language-Recognition}{\color{blue}{GitHub}}}}
-    \resumeItemListStart
-        \resumeItem{\normalsize{Achieved \textbf{97\% accuracy} in real-time sign language recognition via live video using CNN and Random Forest approaches.}}
-    \resumeItemListEnd
+\resumeItem{
+Integrated and optimized LLM/VLM pipelines using prompt engineering,
+document chunking, OCR and structured extraction techniques.
+Built an \textbf{MCP server with 41 tools} enabling enterprise AI agents
+to execute DocAI workflows conversationally.
+}
 
-    \resumeItemListEnd
- \vspace{-12pt}
+\resumeItem{
+In acceptance testing across \textbf{63 documents, 441 extracted fields and 69 validation rules},
+achieved \textbf{99.32\% field extraction accuracy},
+\textbf{100\% document classification accuracy},
+\textbf{95.65\% validation accuracy},
+and only \textbf{4.76\% manual intervention}.
+}
 
-\section{\color{airforceblue}COMPETITION AND AWARD } 
-  \resumeItemListStart
-    \resumeItem{\normalsize{HUST Academic Excellence Scholarship 2024.1, 2024.2, 2025.1}}
-\vspace{-5pt}\resumeItem{\normalsize{\href{https://www.facebook.com/scic.soict/posts/pfbid09VfR4sDziSnJ3wqtQe1uvoHCFsSLdQM1RUDf2AuVCrv8WnNbwwWzRGiUAzMvBMxTl}{Top 1 Student Creative Ideas Challenge - SOICT}}}
-    \vspace{-5pt}
-\resumeItem{\normalsize{\href{https://www.facebook.com/share/p/1BTMMT1HA8/}{SOICT Hackathon Finals}}}
-    \vspace{-5pt}
-    \resumeItem{\normalsize{Top 6 DENSO Factory Hacks 2023}}
-    \vspace{-5pt}
-  \resumeItemListEnd 
-      
+\resumeItem{
+Supported production pilot deployment and operations across
+\textbf{4 departments}, including approximately
+\textbf{20 core Finance users} and an estimated
+\textbf{30K processed files}.
+Contributed to Docker-based deployment, Kubernetes production configuration,
+load testing, monitoring and operational troubleshooting.
+}
+
+\resumeItem{
+Contributed to \textbf{netMind}, Viettel Network's enterprise AI assistant
+serving \textbf{1,200+ users}.
+Built core RAG and agent workflows, MCP/tool integrations,
+document ingestion and the Notebook/Studio capabilities;
+Notebook reached approximately \textbf{300 users within its first two weeks}.
+}
+
+\resumeItem{
+Architected \textbf{DocProcess}, a shared event-driven ingestion engine
+behind DocAI, RAG and data masking workflows.
+Designed queue-based workers, modular document processors and failure isolation;
+\textbf{100 concurrent tasks completed with zero failures},
+while processing time decreased by up to \textbf{90\%} versus the previous flow.
+}
+
+\resumeItem{
+Built a \textbf{Data Masking Agent} for enterprise use of external AI tools,
+combining dictionary matching, regex and semantic detection with
+reversible in-place redaction.
+At the gateway layer, \textbf{10,700 of 10,766 uploads were blocked}
+and sensitive files were released only after masking.
+}
+
+\resumeItemListEnd
+
+%----------------------------------------------------------
+% VDT
+%----------------------------------------------------------
+
+\resumeSubheading
+{Viettel Digital Talent -- Data Engineering Intern}
+{07/2025 -- 10/2025}
+{Viettel Network}
+{Ha Noi, Viet Nam}
+
+\resumeItemListStart
+
+\resumeItem{
+Selected for the \textbf{Viettel Digital Talent 2025} program
+and completed a three-month Data Engineering internship at Viettel Network
+before transitioning to a full-time AI Engineer role.
+}
+
+\resumeItem{
+Worked on data engineering and AI-oriented systems involving
+document processing, data pipelines and enterprise application integration.
+}
+
+\resumeItemListEnd
+
+%----------------------------------------------------------
+% FPT
+%----------------------------------------------------------
+
+\resumeSubheading
+{Data Analyst / Data Engineer Intern}
+{12/2023 -- 03/2024}
+{FPT}
+{Ha Noi, Viet Nam}
+
+\resumeItemListStart
+
+\resumeItem{
+Built pipelines to extract and transform PDF and Word documents into
+structured Markdown, improving document representation for downstream RAG systems.
+}
+
+\resumeItem{
+Analyzed academic datasets and prepared structured information
+for AI chatbot and knowledge-retrieval use cases.
+}
+
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\vspace{-12pt}
+
+%==========================================================
+% PAGE 2
+%==========================================================
+
+\newpage
+
+%==========================================================
+% SELECTED PROJECTS
+%==========================================================
+
+\section{\color{airforceblue}SELECTED ENGINEERING PROJECTS}
+
+\resumeSubHeadingListStart
+
+%----------------------------------------------------------
+% COURSEBOT
+%----------------------------------------------------------
+
+\resumeProjectHeading
+{\textbf{\large CourseBot -- AI Tutor Platform}
+$|$ \emph{Solo Graduation Thesis}}
+{2026}
+
+\resumeItemListStart
+
+\resumeItem{
+Designed and built an end-to-end AI tutor that allows instructors
+to upload course materials and provides students with
+\textbf{source-grounded answers with citations},
+while restricting responses to the scope defined by each course.
+}
+
+\resumeItem{
+Built a \textbf{12-step agent pipeline} combining
+LLM-based intent and scope routing, policy guardrails,
+query rewriting, Qdrant retrieval, conditional evidence judging,
+weak-evidence refusal, streaming generation,
+citations and quality metrics.
+}
+
+\resumeItem{
+Implemented the complete product independently:
+FastAPI backend, teacher dashboard, student chat widget,
+PostgreSQL, Redis, Qdrant, MinIO,
+document-processing workers, Docker deployment,
+HTTPS/Nginx configuration and CI/CD.
+}
+
+\resumeItem{
+Supports per-course embed keys,
+iframe/chat-bubble integration and administrative CORS management,
+allowing the tutor to be embedded into external LMS or websites.
+}
+
+\resumeItem{
+\textbf{Graduation Thesis grade: 9.5/10 (A+)}.
+Received the
+\textbf{Best Presentation Award -- Thesis Defense 2026}
+at SOICT, Hanoi University of Science and Technology.
+}
+
+\resumeItemListEnd
+
+\vspace{2pt}
+
+%----------------------------------------------------------
+% VECTOR DB / RAG BENCHMARK
+%----------------------------------------------------------
+
+\resumeProjectHeading
+{\textbf{\large Vector Database \& RAG Benchmark}
+$|$ \emph{Milvus, Qdrant, Elasticsearch, pgvector}}
+{}
+
+\resumeItemListStart
+
+\resumeItem{
+Designed a benchmark framework to compare vector databases
+across ingestion throughput, indexing behavior,
+query latency and retrieval performance for production RAG workloads.
+}
+
+\resumeItem{
+Built automated evaluation pipelines with ground-truth data,
+performance metrics and manual review support,
+then used the results to guide vector-store selection
+for downstream document QA and RAG architectures.
+}
+
+\resumeItemListEnd
+
+\vspace{2pt}
+
+%----------------------------------------------------------
+% STUDYSPACE
+%----------------------------------------------------------
+
+\resumeProjectHeading
+{\textbf{\large StudySpace}
+$|$ \emph{Next.js, FastAPI, MongoDB, AI}}
+{}
+
+\resumeItemListStart
+
+\resumeItem{
+Built a full-stack learning platform combining
+Pomodoro-based study workflows, AI-assisted learning,
+course organization and an adaptive quiz system.
+}
+
+\resumeItemListEnd
+
+\vspace{2pt}
+
+%----------------------------------------------------------
+% SIGN LANGUAGE
+%----------------------------------------------------------
+
+\resumeProjectHeading
+{\textbf{\large Sign Language Recognition}
+$|$ \emph{Python, CNN, OpenCV}}
+{}
+
+\resumeItemListStart
+
+\resumeItem{
+Developed a real-time computer-vision recognition system
+and compared CNN and Random Forest approaches,
+achieving approximately \textbf{97\% classification accuracy}.
+}
+
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\vspace{-9pt}
+
+%==========================================================
+% TECHNICAL SKILLS
+%==========================================================
+
+\section{\color{airforceblue}TECHNICAL SKILLS}
+
+\begin{itemize}[leftmargin=0in, label={}, itemsep=2pt]
+
+\small{
+
+\item{
+\textbf{AI \& LLM Systems:}
+RAG, Agentic AI, MCP,
+LLM/VLM integration,
+prompt optimization,
+Document AI,
+OCR,
+structured extraction,
+chunking and retrieval,
+LLM evaluation,
+vLLM
+}
+
+\item{
+\textbf{Backend \& Data:}
+Python,
+FastAPI,
+PostgreSQL,
+Redis,
+Qdrant,
+Milvus,
+Elasticsearch,
+MinIO,
+REST APIs,
+event-driven systems,
+data pipelines
+}
+
+\item{
+\textbf{Platform \& DevOps:}
+Docker,
+Kubernetes,
+GitHub Actions,
+Prometheus,
+Grafana,
+Linux,
+CI/CD,
+microservices,
+load testing,
+production monitoring
+}
+
+\item{
+\textbf{Frontend \& Languages:}
+Next.js,
+React,
+TypeScript,
+JavaScript,
+C/C++,
+Java
+}
+
+}
+
+\end{itemize}
+
+\vspace{-12pt}
+
+%==========================================================
+% EDUCATION
+%==========================================================
+
+\section{\color{airforceblue}EDUCATION}
+
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Hanoi University of Science and Technology -- HUST}
+{09/2022 -- 09/2026}
+{B.Eng. in Global ICT -- CPA: \textbf{3.78/4.0}}
+{Ha Noi, Viet Nam}
+
+\resumeSubHeadingListEnd
+
+\vspace{-9pt}
+
+%==========================================================
+% AWARDS
+%==========================================================
+
+\section{\color{airforceblue}AWARDS \& HONORS}
+
+\resumeItemListStart
+
+\resumeItem{
+\textbf{Best Presentation Award -- Thesis Defense 2026},
+SOICT -- HUST
+}
+
+\resumeItem{
+\textbf{Vietcombank Scholarship for Outstanding Students},
+2024--2025 and 2025--2026
+}
+
+\resumeItem{
+\textbf{AI Ambassador},
+Viettel AI Race 2025
+}
+
+\resumeItem{
+\textbf{HUST Academic Excellence Scholarship},
+2024.1, 2024.2 and 2025.1
+}
+
+\resumeItem{
+\textbf{Top 1 -- Student Creative Ideas Challenge},
+SOICT -- HUST
+}
+
+\resumeItemListEnd
+
 \vspace{-8pt}
+
+%==========================================================
+% CERTIFICATIONS
+%==========================================================
+
 \section{\color{airforceblue}CERTIFICATIONS}
-  \resumeItemListStart
-    \resumeItem{\normalsize{Certificate of Graduation - Phase 2 of Viettel Digital Talent Program 2025}}
-    \vspace{-5pt}
-    \resumeItem{\normalsize{Certificate of Completion - Phase 1 of Viettel Digital Talent Program 2025: Data Engineering}}
-    \vspace{-5pt}
-    \resumeItem{\normalsize{VSTEP 7.0 by Hanoi University of Science and Technology (HUST) }}
-    \vspace{-5pt}
-    \resumeItem{\normalsize{IELTS 6.0 by British Council}}
-    \vspace{-5pt}
-    \resumeItem{\normalsize{\href{https://www.coursera.org/account/accomplishments/specialization/certificate/LSGFHA3RQG4D}{Google Data Analytics Specialization}} }
-    \vspace{-5pt}
-    \resumeItem{\normalsize{Microsoft Office Specialist Excel 2016, Word 2013, Powerpoint 2013}} 
-    \vspace{-5pt}
 
-  \resumeItemListEnd 
-      
-\vspace{-8pt}
-%-----------EXTRACURRICULAR---------------
-\section{\color{airforceblue}EXTRACURRICULAR ACTIVITIES}
-  \resumeItemListStart
-    \resumeItem{\normalsize{\textbf {Vice President},  \href{https://www.facebook.com/soditec.soict.hust}{\color{blue}{SoDiTEC Club}} - {12/2022 - Now}} \\
-      Led two online courses (“Conquering LaTeX” and “Introduction to IT & C Programming”), attracting over 5,000 learners globally.\\
-      Oversaw club operations, developed content strategy, and coordinated workshops and events.
-    }
-    \vspace{-5pt}
-    \resumeItem{\normalsize{\textbf{Teaching Assistant, Short Courses @SOICT} 
-    \newline
-   Supported instruction for \textit{“Prompt Engineering,” “Programming with Scratch,” and “Kidemy’s AI Summer Camp,”} clarifying core concepts and grading assignments. \\
-     Improved student engagement and retention for hundreds of learners through hands-on guidance.
-   }}
-    \vspace{-5pt}
-    \resumeItem{\normalsize{\textbf{Head of Academic Research & Career Guidance,} \href{https://www.facebook.com/soict.hust}{\color{blue}{Youth Union }}- SOICT - {12/2022 - Now}} \\
-    Organized academic contests, knowledge-sharing sessions, and career orientation programs, drawing strong student participation.
+\resumeItemListStart
 
-\\ Promoted a research culture, supported academic development, and enhanced professional readiness among undergraduates.
+\resumeItem{
+Viettel Digital Talent Program 2025 -- Data Engineering
+}
 
-    }
+\resumeItem{
+Google Data Analytics Specialization
+}
 
+\resumeItem{
+VSTEP 7.0 -- Hanoi University of Science and Technology;
+IELTS 6.0 -- British Council
+}
+
+\resumeItemListEnd
 
 \end{document}
